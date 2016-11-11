@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.astm.org/E55/03/eDataXchange" elementFormDefault="qualified" xml:lang="EN">
+<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <xs:element name="ASTMeDataXchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FileInformation" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EndUserSystemVersion" type="xs:decimal" minOccurs="0"></xs:element>
+              <xs:element name="FilePartyEmail" type="xs:string" minOccurs="0"></xs:element>
+              <xs:element name="DataPartyEmail" type="xs:string" minOccurs="0"></xs:element>
+              <xs:element name="GenerationDate" type="xs:date" minOccurs="1"></xs:element>
+              <xs:element name="GenerationTime" type="xs:time" minOccurs="1"></xs:element>
+              <xs:element name="ContentRevision" type="xs:decimal" minOccurs="1"></xs:element>
+              <xs:element ref="ds:Signature" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:decimal"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Comments"></xs:element>
+        <xs:element name="MaterialDataGroup" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaterialData" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="QualitySignature" type="xs:string" minOccurs="0"></xs:element>
+                    <xs:element name="Manufacturer" minOccurs="1">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="Type" default="Manufacturer">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="Manufacturer"/>
+                                  <xs:enumeration value="Distributor"/>
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="Level" type="xs:int" use="required"></xs:attribute>
+                            <xs:attribute name="Plant" type="xs:string"></xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProductName" type="xs:string" minOccurs="1"></xs:element>
+                    <xs:element name="PartNumber" type="xs:string" minOccurs="1"></xs:element>
+                    <xs:element name="Lot" minOccurs="1">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="LotDate" type="xs:date" use="required"></xs:attribute>
+                            <xs:attribute name="ManufactureReceive" default="MfgDate">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:enumeration value="MfgDate"/>
+                                  <xs:enumeration value="ReceiveDate"/>
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:attribute>
+                            <xs:attribute name="ExpDate" type="xs:date"></xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Quantity" type="xs:decimal" minOccurs="0"></xs:element>
+                    <xs:element name="QuantityUOM" type="xs:string" minOccurs="0"></xs:element>
+                    <xs:element name="EndUserManufacturerName" type="xs:string" minOccurs="0"></xs:element>
+                    <xs:element name="EndUserLotNumber" type="xs:string" minOccurs="0"></xs:element>
+                    <xs:element name="MaterialParameters" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="MaterialParameter" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Name" type="xs:string" minOccurs="1"></xs:element>
+                                <xs:element name="Description" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="MeasurementAttribute" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="MeasurementVariable" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="UnitOfMeasure" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="Method" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="MeasurementType" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="MeasurementValue" type="xs:double" nillable="true" minOccurs="0"></xs:element>
+                                <xs:element name="MeasurementText" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="MeasurementTestLot" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="SpecificationNumber" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="Specification" type="xs:string" minOccurs="0"></xs:element>
+                                <xs:element name="SampleLocation" type="xs:string" minOccurs="0"></xs:element>
+                              </xs:sequence>
+			      <xs:attribute name="MaterialDataLotRef" type="xs:IDREF"></xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+            	  <xs:attribute name="MaterialDataLotID" type="xs:ID"></xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

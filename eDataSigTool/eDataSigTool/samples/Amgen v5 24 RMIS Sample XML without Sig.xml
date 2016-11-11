@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<ASTMeDataXchange xmlns="http://www.astm.org/E55/03/eDataXchange">
+
+  <FileInformation version="1.0">
+
+    <EndUserSystemVersion>1</EndUserSystemVersion>
+
+    <FilePartyEmail>SOMETHING@SUPPLIER.COM</FilePartyEmail>
+
+    <DataPartyEmail>INFO@SUPPLIER.COM</DataPartyEmail>
+
+    <GenerationDate>2013-06-03</GenerationDate>
+
+    <GenerationTime>10:37:34</GenerationTime>
+
+    <ContentRevision>1</ContentRevision>
+  </FileInformation>
+
+  <Comments>Materials from multi-manufacturers</Comments>
+  <MaterialDataGroup>
+
+    <MaterialData MaterialDataLotID="L100">
+
+      <QualitySignature>Jane Doe</QualitySignature>
+
+      <Manufacturer Type="Manufacturer" Level="0" Plant="Plant1">SUPPLIER A</Manufacturer>
+
+      <ProductName>Material -0-001</ProductName>
+
+      <PartNumber>MN-001</PartNumber>
+
+      <Lot LotDate="2016-02-24" ManufactureReceive="ReceiveDate" ExpDate="2018-02-22">L0-1234567</Lot>
+
+      <Quantity>10</Quantity>
+
+      <QuantityUOM>Kg</QuantityUOM>
+
+      <EndUserManufacturerName>Kg</EndUserManufacturerName>
+
+      <EndUserLotNumber>Kg</EndUserLotNumber>
+
+      <MaterialParameters>
+
+        <MaterialParameter MaterialDataLotRef="L100">
+
+          <Name>Assay123</Name>
+
+          <Description>USP-Assay123 (Material-0-001) (dried basis), horizontal</Description>
+
+          <MeasurementAttribute>StrengthTest</MeasurementAttribute>
+
+          <MeasurementVariable>Mean</MeasurementVariable>
+
+          <UnitOfMeasure>N</UnitOfMeasure>
+
+          <Method>METH-001</Method>
+
+          <MeasurementType>EQ</MeasurementType>
+
+          <MeasurementValue>4.5</MeasurementValue>
+
+          <MeasurementText>4.5</MeasurementText>
+
+          <MeasurementTestLot>MTL-001</MeasurementTestLot>
+
+          <SpecificationNumber>SPEC-001</SpecificationNumber>
+
+          <Specification>4.0-6.0</Specification>
+
+          <SampleLocation>Top</SampleLocation>
+
+        </MaterialParameter>
+
+      </MaterialParameters>
+
+    </MaterialData>
+
+    <MaterialData MaterialDataLotID="L200">
+
+      <QualitySignature>John Smith</QualitySignature>
+
+      <Manufacturer Type="Manufacturer" Level="1" Plant="PlantB-001">SUPPLIER B(A-1)</Manufacturer>
+
+      <ProductName>Sodium Acetate</ProductName>
+
+      <PartNumber>MN-L1-001</PartNumber>
+
+      <Lot LotDate="2016-01-15" ManufactureReceive="MfgDate" ExpDate="2019-01-15">L1-56378</Lot>
+
+      <Quantity>2</Quantity>
+
+      <QuantityUOM>kg</QuantityUOM>
+
+      <EndUserManufacturerName>Supplier A</EndUserManufacturerName>
+
+      <EndUserLotNumber>L0-1234567</EndUserLotNumber>
+
+      <MaterialParameters>
+
+        <MaterialParameter MaterialDataLotRef="L200">
+
+          <Name>pH</Name>
+
+          <Description>EP-pH-5% Aquous Solution 25 Degree Celcius</Description>
+
+          <MeasurementAttribute>pH of 5% solution at 25 Degree Celcius</MeasurementAttribute>
+
+          <MeasurementVariable>Mean</MeasurementVariable>
+
+          <UnitOfMeasure></UnitOfMeasure>
+
+          <Method>METH-1-002</Method>
+
+          <MeasurementType>EQ</MeasurementType>
+
+          <MeasurementValue>4.5</MeasurementValue>
+
+          <MeasurementText>4.5</MeasurementText>
+
+          <MeasurementTestLot></MeasurementTestLot>
+
+          <SpecificationNumber>SPEC-1-002</SpecificationNumber>
+
+          <Specification>4.0-6.0</Specification>
+
+          <SampleLocation>Top</SampleLocation>
+
+        </MaterialParameter>
+
+      </MaterialParameters>
+
+    </MaterialData>
+
+    <MaterialData MaterialDataLotID="L300">
+
+      <QualitySignature></QualitySignature>
+
+      <Manufacturer Type="Distributor" Level="1" Plant="PlantC-1-123">SUPPLIER C</Manufacturer>
+
+      <ProductName>Sodium Phosphate Dibasic</ProductName>
+
+      <PartNumber>Material Number Component 2</PartNumber>
+
+      <Lot LotDate="2015-12-05" ManufactureReceive="ReceiveDate" ExpDate="2018-05-05">98765ACD</Lot>
+
+      <Quantity>99</Quantity>
+
+      <QuantityUOM>g</QuantityUOM>
+
+      <EndUserManufacturerName>Supplier A</EndUserManufacturerName>
+
+      <EndUserLotNumber>L0-1234567</EndUserLotNumber>
+
+      <MaterialParameters>
+
+        <MaterialParameter MaterialDataLotRef="L300">
+
+          <Name>pH</Name>
+
+          <Description>EP-pH-5% Aquous Solution 25 Degree Celcius</Description>
+
+          <MeasurementAttribute>pH of 5% Solution at 25 Degree Celcius</MeasurementAttribute>
+
+          <MeasurementVariable>Mean</MeasurementVariable>
+
+          <UnitOfMeasure></UnitOfMeasure>
+
+          <Method>MET-0052</Method>
+
+          <MeasurementType></MeasurementType>
+
+          <MeasurementValue>0</MeasurementValue>
+
+          <MeasurementText>PASS</MeasurementText>
+
+          <MeasurementTestLot>TEST007</MeasurementTestLot>
+
+          <SpecificationNumber>SPEC-007</SpecificationNumber>
+
+          <Specification>8.0</Specification>
+          <SampleLocation>Center</SampleLocation>
+
+        </MaterialParameter>
+
+      </MaterialParameters>
+
+    </MaterialData>
+
+  </MaterialDataGroup>
+
+</ASTMeDataXchange>
